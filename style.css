@@ -1,0 +1,143 @@
+/* Import the Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Keyframes for 'header' animation */
+@keyframes header {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for 'sections' animation */
+@keyframes sections {
+    from {
+        opacity: 0;
+        transform: translateY(200px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply 'header' animation to h1 element */
+h1 {
+    animation: header 1s;
+}
+
+/* Apply 'sections' animation to all sections */
+section {
+    animation: sections 500ms ease-in;
+}
+
+/* Styles for the body */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background: #e1e7ef;
+    color: #e1e7ef;
+}
+
+/* Styles for the container */
+.container {
+    width: auto;
+    text-align: center;
+    padding: 30px;
+    border: 1px solid white;
+    border-radius: 30px;
+    background: #2e3f57;
+}
+
+/* Styles for the h1 element within the container */
+.container h1 {
+    margin: 0px 20px 10px 20px;
+}
+
+/* Styles for the box elements */
+.box {
+    padding: 5px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Styles for input elements */
+input {
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 5px;
+    background-color: #e1e7ef;
+}
+
+/* Hide scrollbars */
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Styles for the message element */
+.message {
+    margin: 10px;
+}
+
+/* Styles for the enter_unit elements */
+.enter_unit {
+    width: 350px;
+    text-align: start;
+    padding: 5px;
+    margin: 7px 0px;
+}
+
+/* Styles for the btn elements */
+.btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Styles for button elements within .btn */
+.btn button {
+    font-size: medium;
+    color: #e1e7ef;
+    padding: 5px;
+    border: 1px solid white;
+    background: #2e3f57;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+/* Styles for the active button */
+.btn button.active {
+    color: #2e3f57;
+    background: #e1e7ef;
+    border-radius: 30px;
+    padding: 8px;
+}
+
+/* Hover styles for button elements */
+.btn button:hover {
+    color: #2e3f57;
+    background: #e1e7ef;
+    border-radius: 30px;
+    padding: 8px;
+}
+
+/* Styles for select elements */
+select {
+    width: 150px;
+    padding: 5px;
+    background: #c0ccde;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Styles for select option elements */
+select option {
+    background-color: #e1e7ef;
+}

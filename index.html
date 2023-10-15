@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="./style.css"> <!-- Include an external CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>UNIT CONVERTER</h1> <!-- Heading for the unit converter -->
+        <div class="btn">
+            <button class="btn_length">Length</button> <!-- Button for length conversion -->
+            <button class="btn_temp">Temperature</button> <!-- Button for temperature conversion -->
+            <button class="btn_time">Time</button> <!-- Button for time conversion -->
+            <button class="btn_mass">Mass</button> <!-- Button for mass conversion -->
+        </div>
+    
+        <section class="message">
+            <h3>Please select any of the above unit</h3> <!-- Message section for user instructions -->
+        </section>
+    
+        <!-- Section for Length Conversion -->
+        <section class="Length" style="display: none;">
+            <div class="enter_unit">
+                <label for="length_inpfrom">Enter Length</label> <!-- Label for length input -->
+            </div>
+            <div class="box">
+                <input id="length_inpfrom" type="number" value="1" oninput="convertLength();"> <!-- Input field for length -->
+                <div class="dropdown">
+                    <select id="length_inputUnit" class="dropdown-menu" onchange="convertLength();">
+                        <!-- Dropdown for selecting length units -->
+                        <option value="m">meters (m)</option>
+                        <option value="cm">centimeters (cm)</option>
+                        <option value="dm">decimeters (dm)</option>
+                        <option value="ft">feet (ft)</option>
+                        <option value="in">inches (in)</option>
+                        <option value="km">kilometers (km)</option>
+                        <option value="mi">miles (mi)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="enter_unit">
+                <label for="length_inpto">Converted Length</label> <!-- Label for converted length -->
+            </div>
+            <div class="box">
+            <input id="length_inpto" type="number" value="1" oninput="convertbackLength();"> <!-- Input field for converted length -->
+            <div class="dropdown">
+                <select id="length_outputUnit" class="dropdown-menu" onchange="convertLength();">
+                    <!-- Dropdown for selecting output length units -->
+                    <option value="m">meters (m)</option>
+                    <option value="cm">centimeters (cm)</option>
+                    <option value="dm">decimeters (dm)</option>
+                    <option value="ft">feet (ft)</option>
+                    <option value="in">inches (in)</option>
+                    <option value="km">kilometers (km)</option>
+                    <option value="mi">miles (mi)</option>
+                </select>
+            </div>
+            </div>
+        </section>
+    
+        <!-- Section for Temperature Conversion -->
+        <section class="Temperature" style="display: none;">
+            <div class="enter_unit">
+                <label for="temp_inpfrom">Enter Temperature</label> <!-- Label for temperature input -->
+            </div>
+            <div class="box">
+            <input id="temp_inpfrom" type="number" value="1" oninput="convertTemperature();"> <!-- Input field for temperature -->
+            <div class="dropdown">
+                <select id="temp_inputUnit" class="dropdown-menu" onchange="convertTemperature();">
+                    <!-- Dropdown for selecting temperature units -->
+                    <option value="celsius">Celsius (°C)</option>
+                    <option value="fahrenheit">Fahrenheit (°F)</option>
+                    <option value="kelvin">Kelvin (K)</option>
+                    <option value="rankine">Rankine (°R)</option>
+                </select>
+            </div>
+            </div>
+            <div class="enter_unit">
+                <label for="temp_inpto">Converted Temperature</label> <!-- Label for converted temperature -->
+            </div>
+            <div class="box">
+            <input id="temp_inpto" type="number" value="1" oninput="convertbackTemperature();"> <!-- Input field for converted temperature -->
+            <div class="dropdown">
+                <select id="temp_outputUnit" class="dropdown-menu" onchange="convertTemperature();">
+                    <!-- Dropdown for selecting output temperature units -->
+                    <option value="celsius">Celsius (°C)</option>
+                    <option value="fahrenheit">Fahrenheit (°F)</option>
+                    <option value="kelvin">Kelvin (K)</option>
+                    <option value="rankine">Rankine (°R)</option>
+                </select>
+            </div>
+            </div>
+        </section>
+    
+        <!-- Section for Time Conversion -->
+        <section class="Time" style="display: none;">
+            <div class="enter_unit">
+                <label for="time_inpfrom">Enter Time</label> <!-- Label for time input -->
+            </div>
+            <div class="box">
+            <input id="time_inpfrom" type="number" value="1" oninput="convertTime();"> <!-- Input field for time -->
+            <div class="dropdown">
+                <select id="time_inputUnit" class="dropdown-menu" onchange="convertTime();">
+                    <!-- Dropdown for selecting time units -->
+                    <option value="sec">seconds</option>
+                    <option value="min">minutes</option>
+                    <option value="hour">hours</option>
+                    <option value="day">days</option>
+                    <option value="year">years</option>
+                    <option value="dec">decades</option>
+                </select>
+            </div>
+            </div>
+            <div class="enter_unit">
+                <label for="time_inpto">Converted Time</label> <!-- Label for converted time -->
+            </div>
+            <div class="box">
+            <input id="time_inpto" type="number" value="1" oninput="convertbackTime();"> <!-- Input field for converted time -->
+            <div class="dropdown">
+                <select id="time_outputUnit" class="dropdown-menu" onchange="convertTime();">
+                    <!-- Dropdown for selecting output time units -->
+                    <option value="sec">seconds</option>
+                    <option value="min">minutes</option>
+                    <option value="hour">hours</option>
+                    <option value="day">days</option>
+                    <option value="year">years</option>
+                    <option value="dec">decades</option>
+                </select>
+            </div>
+            </div>
+        </section>
+    
+        <!-- Section for Mass Conversion -->
+        <section class="Mass" style="display: none;">
+            <div class="enter_unit">
+                <label for="mass_inpfrom">Enter Mass</label> <!-- Label for mass input -->
+            </div>
+            <div class="box">
+            <input id="mass_inpfrom" type="number" value="1" oninput="convertMass();"> <!-- Input field for mass -->
+            <div class="dropdown">
+                <select id="mass_inputUnit" class="dropdown-menu" onchange="convertMass();">
+                    <!-- Dropdown for selecting mass units -->
+                    <option value="mg">milligrams (mg)</option>
+                    <option value="g">grams (g)</option>
+                    <option value="oz">ounces (oz)</option>
+                    <option value="lb">pounds (lb)</option>
+                    <option value="kg">kilograms (kg)</option>
+                    <option value="ton">tons (ton)</option>
+                </select>
+            </div>
+            </div>
+            <div class="enter_unit">
+                <label for="mass_inpto">Converted Mass</label> <!-- Label for converted mass -->
+            </div>
+            <div class="box">
+            <input id="mass_inpto" type="number" value="1" oninput="convertbackMass();"> <!-- Input field for converted mass -->
+            <div class="dropdown">
+                <select id="mass_outputUnit" class="dropdown-menu" onchange="convertMass();">
+                    <!-- Dropdown for selecting output mass units -->
+                    <option value="mg">milligrams (mg)</option>
+                    <option value="g">grams (g)</option>
+                    <option value="oz">ounces (oz)</option>
+                    <option value="lb">pounds (lb)</option>
+                    <option value="kg">kilograms (kg)</option>
+                    <option value="ton">tons (ton)</option>
+                </select>
+            </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="./index.js"></script> <!-- Include an external JavaScript file -->
+</body>
+</html>
